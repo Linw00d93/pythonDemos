@@ -11,8 +11,7 @@ while numberFound == False:
             print " YOU FOUND IT:"
             print(arrayText[y])
             print(arrayText[x])
-            numberFound = True
-            break
+            exit()
         else:
             print "Next"
         x = x+1
