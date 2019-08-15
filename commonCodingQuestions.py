@@ -1,12 +1,20 @@
 #common coding questions
-arrayText = [ 1,3,45,76,124,523,63,12,431,-3,64,7,39,9,23,12,21,43,65,79,98,72,5,9]
-linwood = [None] * len(arrayText)
+arrayText = [ 1,3,45,76,124,523,63,12,431,-9,67,34,124,768,97,65,423,135,876,96,99,22,4,55,64,7,39,9,23,12,21,43,65,79,98,72,5,9]
+x = 0
+y = 0
+numberFound = False
+while numberFound == False:
 
-for i in range(0, len (arrayText)):
-    linwood[i] = arrayText[i];
+    for i in range(len(arrayText)):
 
-
-numberOfNumbers = len(arrayText)
-print(numberOfNumbers)
-print(arrayText.sort())
-print(linwood.sort())
+        if (arrayText[y] + arrayText[x] == 0):
+            print " YOU FOUND IT:"
+            print(arrayText[y])
+            print(arrayText[x])
+            numberFound = True
+            break
+        else:
+            print "Next"
+        x = x+1
+    x = 0
+    y = y + 1
