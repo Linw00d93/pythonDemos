@@ -8,7 +8,7 @@ currentMoney = startMoney
 currentBet = 0
 chance = 0
 
-while currentMoney > 0:
+while stillPlaying == True:
 
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
@@ -87,4 +87,5 @@ while currentMoney > 0:
     else:
 
         print("Thanks for coming")
+        stillPlaying = False
         SystemExit()
