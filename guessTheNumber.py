@@ -1,4 +1,8 @@
 import random
+import os
+import sys
+from sys import stdin, __stdin__
+
 randomNumber = 0
 guessNumber = 0
 randomNumber = random.randint(0,100)
@@ -9,6 +13,7 @@ print(randomNumber)
 while guess is False:
     print ("Guess a number: ")
     guessNumber = input()
+    print guessNumber
     if randomNumber > guessNumber:
         print ("Number is too low, try again ")
     elif randomNumber < guessNumber:

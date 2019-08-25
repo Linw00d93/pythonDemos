@@ -7,7 +7,7 @@ import time
 
 randomNumber = random.randint(1,20)
 alive = True
-print "Welcome to the Magic 8 ball"
+print ("Welcome to the Magic 8 ball")
 print ("""    ,dP9CGG88@b,
   ,IP  _   Y888@@b,
  dIi  (_)   G8888@b
@@ -22,19 +22,19 @@ Y8GGGGGG8888888@@@@P.....
       .......""")
 time.sleep(1)
 while alive == True:
-    print "Do you have a question for the Magic 8 ball?"
+    print ("Do you have a question for the Magic 8 ball?")
     raw = raw_input()
     userInput = raw.lower()
     if userInput == "yes" or userInput =='y':
-        print "What is your question?"
+        print ("What is your question?")
         userQuestion = raw_input()
-        print "Let me think about that"
+        print ("Let me think about that")
         time.sleep(1)
-        print "."
+        print (".")
         time.sleep(2)
-        print ".."
+        print ("..")
         time.sleep(3)
-        print "..."
+        print ("...")
         if randomNumber == 1:
             print ("As I see it, yes.")
 
@@ -96,10 +96,10 @@ while alive == True:
             print ("You may rely on it.")
 
     elif userInput == "no" or userInput == "n":
-        print "Bye then"
+        print ("Bye then")
         exit()
     else:
-        print "ERROR error Error"
+        print ("ERROR error Error")
 
 
 #    ,dP9CGG88@b,
