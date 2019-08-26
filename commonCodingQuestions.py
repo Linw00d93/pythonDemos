@@ -16,10 +16,10 @@ backWardsWord = (list(reversed(wordList)))
 
 if wordList == backWardsWord:
     txt = wordtext + ' is a Palindrome'
-    print txt
+    print (txt)
 else:
     txt1 = wordtext + ' is not a Palindrome'
-    print txt1
+    print (txt1)
 
 """
 while numberFound == False:

@@ -30,15 +30,7 @@ win357 = ' '
 win369 = ' '
 win456 = ' '
 win789 = ' '
-"""
-def function():
-    if condition1:
-        reaction1()
-    elif condition2:
-        reaction2()
-    else:
-        deafult_reaction()
-        """
+
 
 
 

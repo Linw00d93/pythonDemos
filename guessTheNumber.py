@@ -13,7 +13,6 @@ print(randomNumber)
 while guess is False:
     print ("Guess a number: ")
     guessNumber = input()
-    print guessNumber
     if randomNumber > guessNumber:
         print ("Number is too low, try again ")
     elif randomNumber < guessNumber:
