@@ -19,12 +19,14 @@ line3 = square7 + dash + square8 + dash + square9
 win123, win159, win147, win258, win357, win369, win456, win789 = ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
 
 
+#Print the board function--------------------------------
 def printTheBoard ():
     print (square1 + dash + square2 + dash + square3)
     print (lineBetween)
     print (square4 + dash + square5 + dash + square6)
     print (lineBetween)
     print (square7 + dash + square8 + dash + square9)
+#check for winner function---------------------------------------------------
 def checkForWinner():
     global winner
     winner = 0
@@ -43,11 +45,13 @@ def checkForWinner():
         winner += 1
         return winner
     elif win123 == winConditionX or win159 == winConditionX or win149 == winConditionX or win258 == winConditionX or win357 == winConditionX or win369 == winConditionX or win456 == winConditionX or win789 == winConditionX:
-        print('You beat the AI')
+        print('You beat the AI ')
         printTheBoard()
-        print('Good bye')
+        print('Good bye ')
         winner += 1
         return winner
+
+#check for cat eyes function-------------------------------------------------------------------------------------------------
 def checkIfCatEyes():
     global tie
     tie = 0
@@ -58,9 +62,9 @@ def checkIfCatEyes():
         print(' ')
         return tie
     else:
-        print('Cats Eyes')
+        print('Cats Eyes ')
         printTheBoard()
-        print('Game over, good bye')
+        print('Game over, good bye ')
         tie += 1
         return tie
 
@@ -68,15 +72,16 @@ def checkIfCatEyes():
 
 
 
-print ('Welcome to Tic Tac Toe, Your X and the AI is O')
-userInput = raw_input('Would you like to play Tic Tac Toe: ')
+print ('Welcome to Tic Tac Toe, Your X and the AI is O ')
+userInput = raw_input('Would you like to play Tic Tac Toe (options; yes or no): ')
+userInput.lower()
 if userInput == 'yes' or userInput == 'y':
 
     while playing == True:
 
         iconNotPlace = False
         while iconNotPlace == False:
-
+#User Turn-----------------------------------------------------------------------------------------------------
             iconInput = input('What position would you like to put your icon; Options are 1-9 of the board: ')
 
             if iconInput == 1:
@@ -145,10 +150,12 @@ if userInput == 'yes' or userInput == 'y':
             else:
                 print ('Error')
 
+#Check for winner after user turn---------------------------------------------------------------------
         checkForWinner()
         if winner == 1:
             playing = False
             break
+#Check for cat eyes after user turn-----------------------------------------------------------------------------------
         checkIfCatEyes()
         if tie == 1:
             playing = False
@@ -226,11 +233,12 @@ if userInput == 'yes' or userInput == 'y':
             else:
                 print('Error')
 
-
+#check for winnder after AI turn---------------------------------------------------------------
         checkForWinner()
         if winner == 1:
             playing = False
             break
+#check for cat eyes after AI turn-----------------------------------------------------------------
         checkIfCatEyes()
         if tie == 1:
             playing = False
