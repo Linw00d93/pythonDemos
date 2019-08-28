@@ -8,12 +8,11 @@ userInput = 0
 randomNumber = 0
 global playing
 playing = True
-
+lineBetween = '-----'
 dash = '|'
 square1, square2, square3, square4, square5, square6, square7, square8, square9 = ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
 
 line1 = square1 + dash + square2 + dash + square3
-lineBetween = '-----'
 line2 = square4 + dash + square5 + dash + square6
 line3 = square7 + dash + square8 + dash + square9
 
@@ -26,7 +25,9 @@ def printTheBoard ():
     print (square4 + dash + square5 + dash + square6)
     print (lineBetween)
     print (square7 + dash + square8 + dash + square9)
-def checkForWinner(playing):
+def checkForWinner():
+    global winner
+    winner = 0
     win123 = square1 + square2 + square3
     win159 = square1 + square5 + square9
     win149 = square1 + square4 + square9
@@ -39,17 +40,30 @@ def checkForWinner(playing):
         print('The AI Won')
         printTheBoard()
         print('Good bye')
-        playing = False
-        return playing
-        print(playing)
-        SystemExit()
+        winner += 1
+        return winner
     elif win123 == winConditionX or win159 == winConditionX or win149 == winConditionX or win258 == winConditionX or win357 == winConditionX or win369 == winConditionX or win456 == winConditionX or win789 == winConditionX:
         print('You beat the AI')
         printTheBoard()
         print('Good bye')
-        playing = False
-        return playing
-        SystemExit()
+        winner += 1
+        return winner
+def checkIfCatEyes():
+    global tie
+    tie = 0
+    line1 = square1 + square2 + square3
+    line2 = square4 + square5 + square6
+    line3 = square7 + square8 + square9
+    if ' ' in line1 or ' ' in line2 or ' ' in line3:
+        print(' ')
+        return tie
+    else:
+        print('Cats Eyes')
+        printTheBoard()
+        print('Game over, good bye')
+        tie += 1
+        return tie
+
 
 
 
@@ -114,6 +128,7 @@ if userInput == 'yes' or userInput == 'y':
                     square7 = 'X'
                     iconNotPlace = True
                     printTheBoard()
+            elif iconInput == 8:
                 if square8 == 'X' or square8 == 'O':
                     print ('That square has already been used, try again')
                 else:
@@ -130,74 +145,80 @@ if userInput == 'yes' or userInput == 'y':
             else:
                 print ('Error')
 
-        checkForWinner(playing)
-        print(playing)
+        checkForWinner()
+        if winner == 1:
+            playing = False
+            break
+        checkIfCatEyes()
+        if tie == 1:
+            playing = False
+            break
 
-    #AI turn
+#AI turn-------------------------------------------------------
         print('AI Turn: ')
         time.sleep(3)
         iconNotPlace = False
-        randomNumber = random.randint(1,9)
         while iconNotPlace == False:
+            randomNumber = random.randint(1,9)
             if randomNumber == 1:
                 if square1 == 'X' or square1 == 'O':
-                    break
+                    continue
                 else:
                     square1 = 'O'
                     iconNotPlace = True
                     printTheBoard()
             elif randomNumber == 2:
                 if square2 == 'X' or square2 == 'O':
-                    break
+                    continue
                 else:
                     square2 = 'O'
                     iconNotPlace = True
                     printTheBoard()
             elif randomNumber == 3:
                 if square3 == 'X' or square3 == 'O':
-                    break
+                    continue
                 else:
                     square3 = 'O'
                     iconNotPlace = True
                     printTheBoard()
             elif randomNumber == 4:
                 if square4 == 'X' or square4 =='O':
-                    break
+                    continue
                 else:
                     square4 = 'O'
                     iconNotPlace = True
                     printTheBoard()
             elif randomNumber == 5:
                 if square5 == 'X' or square5 == 'O':
-                    break
+                    continue
                 else:
                     square5 = 'O'
                     iconNotPlace = True
                     printTheBoard()
             elif randomNumber == 6:
                 if square6 == 'X' or square6 == 'O':
-                    break
+                    continue
                 else:
                     square6 = 'O'
                     iconNotPlace = True
                     printTheBoard()
             elif randomNumber == 7:
                 if square7 == 'X' or square7 == 'O':
-                    break
+                    continue
                 else:
                     square7 = 'O'
                     iconNotPlace = True
                     printTheBoard()
             elif randomNumber == 8:
                 if square8 == 'X' or square8 == 'O':
-                    break
+                    continue
                 else:
                     square8 = 'O'
                     iconNotPlace = True
                     printTheBoard()
             elif randomNumber == 9:
                 if square9 == 'X' or square9 == 'O':
-                    break
+                    continue
                 else:
                     square9 = 'O'
                     iconNotPlace = True
@@ -205,8 +226,15 @@ if userInput == 'yes' or userInput == 'y':
             else:
                 print('Error')
 
-        checkForWinner(playing)
-        print(playing)
+
+        checkForWinner()
+        if winner == 1:
+            playing = False
+            break
+        checkIfCatEyes()
+        if tie == 1:
+            playing = False
+            break
 
 elif userInput =='no' or userInput == 'n':
     print('Good bye')
