@@ -4,3 +4,14 @@ sort list by lowest number
 count from lowest number
 and compare to standarom list
 when compare fails that is the magic number 
+
+
+
+[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
+map 
+inputNumber[] 
+
+add fist 2 
+add last 2 
+convert give the map 
+out each one 
