@@ -83,27 +83,28 @@ print (arraysample)
 #Given an array of integers, find the first missing positive integer in linear time and constant space. In other words,
 #find the lowest positive integer that does not exist in the array. The array can contain duplicates and negative numbers as well.
 
-givenArray = [1, 2, 0]
+givenArray = [1, 2, 0,5,3,6,3,6,2]
 scale = 10
 checkingArray = []
 lengthCheck = len(givenArray)
 min1 = -1
 testArray = givenArray
+
 while min1 < 0:
-    min1 = min(givenArray)
-    givenArray.remove(min1)
+    min1 = min(testArray)
+    testArray.remove(min1)
 
 for x in range(min1,scale):
     checkingArray.append(x)
 
-givenArray.append(min1)
+testArray.append(min1)
 
 for x in range(min1,scale):
-    if x in givenArray:
-        print ("")
+    if x in testArray:
+        print("")
     else:
         print ("the number missing is: ")
         print (x)
-        print(testArray)
+        print(givenArray)
         exit()
 """
