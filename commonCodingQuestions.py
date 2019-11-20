@@ -1,6 +1,8 @@
 #common coding questions
-#import copy
+import copy
+import os
 #import numpy
+import random
 arrayText = [ 1,3,45,76,124,523,63,12,431,-9,67,34,124,768,97,65,423,135,876,96,99,22,4,55,64,7,39,9,23,12,21,43,65,79,98,72,5,9]
 
 
@@ -108,7 +110,86 @@ for x in range(min1,scale):
         print(givenArray)
         exit()
 """
-
-#Daily Coding Problem
-#Given the mapping a = 1, b = 2, ... z = 26, 
+"""
+#Daily Coding Problem 7
+#Given the mapping a = 1, b = 2, ... z = 26,
 #and an encoded message, count the number of ways it can be decoded.
+
+inputArray = []
+linwood = 0
+inputArrayFirstHalf = []
+inputArraySecondHalf = []
+output = []
+output1 = []
+output2 = []
+numberOne = 0
+numberTwo = 0
+placeHolder = 0
+x = 0
+Decode = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+randomNumber = random.randint(1,9)
+inputArray.append(randomNumber)
+randomNumber = random.randint(1,9)
+inputArray.append(randomNumber)
+randomNumber = random.randint(1,9)
+inputArray.append(randomNumber)
+print(inputArray)
+
+inputArrayFirstHalf = inputArray.copy()
+
+numberOne = inputArrayFirstHalf.pop(0)
+numberTwo = inputArrayFirstHalf.pop(0)
+numberOne_int = int(numberOne)
+numberTwo_int = int(numberTwo)
+placeHolder = numberOne_int + numberTwo_int
+inputArrayFirstHalf.insert(0,placeHolder)
+
+
+inputArraySecondHalf = inputArray.copy()
+numberTwo = inputArraySecondHalf.pop(2)
+numberOne = inputArraySecondHalf.pop(1)
+numberOne_int = int(numberOne)
+numberTwo_int = int(numberTwo)
+placeHolder = numberOne_int + numberTwo_int
+inputArraySecondHalf.insert(1,placeHolder)
+
+
+print(inputArray)
+print(inputArrayFirstHalf)
+print(inputArraySecondHalf)
+for l in inputArray:
+ x = inputArray[linwood]
+ x_int = int(x)
+ letter = Decode[x_int]
+ output.append(letter)
+ linwood = linwood + 1
+
+linwood = 0
+
+for l in inputArrayFirstHalf:
+  x = inputArrayFirstHalf[linwood]
+  x_int = int(x)
+  letter = Decode[x_int]
+  output1.append(letter)
+  linwood = linwood + 1
+
+linwood = 0
+
+for l in inputArraySecondHalf:
+  x = inputArraySecondHalf[linwood]
+  x_int = int(x)
+  letter = Decode[x_int]
+  output2.append(letter)
+  linwood = linwood + 1
+
+print(output)
+print(output1)
+print(output2)
+"""
+
+#Daily Coding Problem:
+#Implement an autocomplete system. That is, given a query string s and a set of all possible query strings,
+#return all strings in the set that have s as a prefix.
+
+dict = open('./pythonDemos/words.txt' , 'r')
+print(dict)
