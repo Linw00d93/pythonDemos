@@ -9,7 +9,7 @@ randomNumber = random.randint(0,100)
 guess = False
 
 
-print(randomNumber)
+#print(randomNumber)
 while guess is False:
     print ("Guess a number: ")
     guessNumber = input()

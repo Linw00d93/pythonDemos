@@ -187,9 +187,23 @@ print(output1)
 print(output2)
 """
 
-#Daily Coding Problem:
+#Daily Coding Problem: 11
 #Implement an autocomplete system. That is, given a query string s and a set of all possible query strings,
 #return all strings in the set that have s as a prefix.
 
 dict = open('./pythonDemos/words.txt' , 'r')
 print(dict)
+
+#Daily Coding Problem 12
+#There exists a staircase with N steps, and you can climb up either 1 or 2 steps at a time.
+#Given N, write a function that returns the number of unique ways you can climb the staircase.
+#The order of the steps matters.
+
+#Daily Coding problem 22
+#Given a dictionary of words and a string made up of those words (no spaces),
+#return the original sentence in a list. If there is more than one possible reconstruction,
+#return any of them. If there is no possible reconstruction, then return null.
+
+#Daily Coding problem 27
+#Given a string of round, curly, and square open and closing brackets,
+#return whether the brackets are balanced (well-formed).
