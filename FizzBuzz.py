@@ -1,6 +1,6 @@
 import math
 
-for i in range(1,1001):
+for i in range(1,101):
   foo = i%3
   bar = i%5
   #print foo
