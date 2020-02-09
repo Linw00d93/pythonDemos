@@ -6,6 +6,46 @@ import random
 arrayText = [ 1,3,45,76,124,523,63,12,431,-9,67,34,124,768,97,65,423,135,876,96,99,22,4,55,64,7,39,9,23,12,21,43,65,79,98,72,5,9]
 
 """
+Print the name(s) of any student(s) having the second lowest grade in Physics; 
+if there are multiple students, order their names alphabetically 
+and print each one on a new line.
+
+studentNameList=[]
+studentScoreList=[]
+for x in range(int(raw_input())):
+    
+    name = raw_input()
+    studentNameList.append(name)
+    score = float(raw_input())
+    studentScoreList.append(score)
+
+runnerUpListScore =[] 
+runnerUpListName = []
+maxScore =min(studentScoreList)
+numberToPop = studentScoreList.index(maxScore)
+
+i = 0
+
+while i < len(studentScoreList):
+
+    if studentScoreList[i] > maxScore: 
+        runnerUpListScore.append(studentScoreList[i])
+        runnerUpListName.append(studentNameList[i])  
+    i = i + 1
+
+
+runnerUpScore = min(runnerUpListScore)
+runnerUpIndex = runnerUpListScore.index(runnerUpScore)
+
+answer= []
+
+for i in range(len(runnerUpListScore)):
+     if runnerUpListScore[i] == runnerUpScore: 
+         answer.append(runnerUpListName[i])
+answer.sort()
+for i in range(len(answer)):
+    print answer[i]
+
 Given the participants' score sheet for your University Sports Day, 
 you are required to find the runner-up score. 
 You are given  scores. Store them in a list and find the score of the runner-up.
