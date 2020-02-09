@@ -5,8 +5,38 @@ import os
 import random
 arrayText = [ 1,3,45,76,124,523,63,12,431,-9,67,34,124,768,97,65,423,135,876,96,99,22,4,55,64,7,39,9,23,12,21,43,65,79,98,72,5,9]
 
-
 """
+Given the participants' score sheet for your University Sports Day, 
+you are required to find the runner-up score. 
+You are given  scores. Store them in a list and find the score of the runner-up.
+
+n=input()
+a=map(int,input().split())
+a=list(set(a))
+a.remove(max(a))
+print (max(a))
+
+
+
+You are given the year, and you have to write a function to check if the year is leap or not.
+The year can be evenly divided by 4, is a leap year, unless:
+The year can be evenly divided by 100, it is NOT a leap year, unless:
+The year is also evenly divisible by 400. Then it is a leap year.
+
+
+def is_leap(year):
+    leap = False
+    
+    if year % 4 == 0 and not(year % 100 == 0):
+        leap = True
+    elif year % 4 == 0 and year % 100 ==0 and year % 400 == 0:
+        leap = True
+    else:
+        leap = False
+
+    
+    return leap
+
 #Palindrome
 def split(word):
     return list(word)
