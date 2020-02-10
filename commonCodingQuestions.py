@@ -6,6 +6,28 @@ import random
 arrayText = [ 1,3,45,76,124,523,63,12,431,-9,67,34,124,768,97,65,423,135,876,96,99,22,4,55,64,7,39,9,23,12,21,43,65,79,98,72,5,9]
 
 """
+In this challenge, the user enters a string and a substring. 
+You have to print the number of times that the substring occurs in the given string. 
+String traversal will take place from left to right, not from right to left.
+
+def count_substring(string, sub_string):
+    total = 0
+    subLen = len(sub_string)
+    strLen = len(string)
+    for x in range((strLen-subLen)+1):
+        answer = string.find(sub_string,x,x + subLen)
+        if answer > -1:
+            total = total + 1
+    return total
+
+if __name__ == '__main__':
+    string = raw_input().strip()
+    sub_string = raw_input().strip()
+    
+    count = count_substring(string, sub_string)
+    print count
+
+
 Print the name(s) of any student(s) having the second lowest grade in Physics; 
 if there are multiple students, order their names alphabetically 
 and print each one on a new line.
