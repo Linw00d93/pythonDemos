@@ -6,6 +6,40 @@ import random
 arrayText = [ 1,3,45,76,124,523,63,12,431,-9,67,34,124,768,97,65,423,135,876,96,99,22,4,55,64,7,39,9,23,12,21,43,65,79,98,72,5,9]
 
 """
+You are given a string .
+Your task is to find out if the string  contains: alphanumeric characters, alphabetical characters, digits, lowercase and uppercase characters.
+
+In the first line, print True if  has any alphanumeric characters. Otherwise, print False.
+In the second line, print True if  has any alphabetical characters. Otherwise, print False.
+In the third line, print True if  has any digits. Otherwise, print False.
+In the fourth line, print True if  has any lowercase characters. Otherwise, print False.
+In the fifth line, print True if  has any uppercase characters. Otherwise, print False.
+
+if __name__ == '__main__':
+    s = raw_input()
+    alphaN = False
+    alpha = False
+    digits = False
+    lowerC = False
+    upperC = False
+    for x in s: 
+        if (x.isalnum()) == True: 
+            alphaN = True
+        if (x.isalpha()) == True: 
+            alpha = True
+        if (x.isdigit()) == True: 
+            digits = True
+        if (x.islower()) == True: 
+            lowerC = True
+        if (x.isupper()) == True: 
+            upperC = True
+
+print alphaN
+print alpha 
+print digits
+print lowerC
+print upperC 
+
 In this challenge, the user enters a string and a substring. 
 You have to print the number of times that the substring occurs in the given string. 
 String traversal will take place from left to right, not from right to left.
