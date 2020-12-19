@@ -333,3 +333,20 @@ print(dict)
 #Daily Coding problem 27
 #Given a string of round, curly, and square open and closing brackets,
 #return whether the brackets are balanced (well-formed).
+
+def mergeFiles(fileSizes):
+    totalTime = 0
+    size = len(fileSizes) 
+    fileSizes.sort()
+    finalTotal = 0 
+    while size > 1:
+        num1 = fileSizes[0]
+        num2 = fileSizes[1]
+        totalTime = num1 + num2
+        fileSizes.pop(0)
+        fileSizes.pop(0)        
+        fileSizes.insert(0,totalTime)
+        fileSizes.sort()
+        size = size - 1 
+        finalTotal = finalTotal + totalTime
+    return(finalTotal)
