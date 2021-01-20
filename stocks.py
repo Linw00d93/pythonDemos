@@ -1,6 +1,6 @@
 import requests
 
-url = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=MSFT&&apikey=YPJA6LU6Y6CT5OBC"
+url = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=MSFT&&apikey="
 
 response = requests.request("GET" , url)
 data = response.json()
