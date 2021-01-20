@@ -5,8 +5,134 @@ import os
 import random
 arrayText = [ 1,3,45,76,124,523,63,12,431,-9,67,34,124,768,97,65,423,135,876,96,99,22,4,55,64,7,39,9,23,12,21,43,65,79,98,72,5,9]
 
-
 """
+You are given a string .
+Your task is to find out if the string  contains: alphanumeric characters, alphabetical characters, digits, lowercase and uppercase characters.
+
+In the first line, print True if  has any alphanumeric characters. Otherwise, print False.
+In the second line, print True if  has any alphabetical characters. Otherwise, print False.
+In the third line, print True if  has any digits. Otherwise, print False.
+In the fourth line, print True if  has any lowercase characters. Otherwise, print False.
+In the fifth line, print True if  has any uppercase characters. Otherwise, print False.
+
+if __name__ == '__main__':
+    s = raw_input()
+    alphaN = False
+    alpha = False
+    digits = False
+    lowerC = False
+    upperC = False
+    for x in s: 
+        if (x.isalnum()) == True: 
+            alphaN = True
+        if (x.isalpha()) == True: 
+            alpha = True
+        if (x.isdigit()) == True: 
+            digits = True
+        if (x.islower()) == True: 
+            lowerC = True
+        if (x.isupper()) == True: 
+            upperC = True
+
+print alphaN
+print alpha 
+print digits
+print lowerC
+print upperC 
+
+In this challenge, the user enters a string and a substring. 
+You have to print the number of times that the substring occurs in the given string. 
+String traversal will take place from left to right, not from right to left.
+
+def count_substring(string, sub_string):
+    total = 0
+    subLen = len(sub_string)
+    strLen = len(string)
+    for x in range((strLen-subLen)+1):
+        answer = string.find(sub_string,x,x + subLen)
+        if answer > -1:
+            total = total + 1
+    return total
+
+if __name__ == '__main__':
+    string = raw_input().strip()
+    sub_string = raw_input().strip()
+    
+    count = count_substring(string, sub_string)
+    print count
+
+
+Print the name(s) of any student(s) having the second lowest grade in Physics; 
+if there are multiple students, order their names alphabetically 
+and print each one on a new line.
+
+studentNameList=[]
+studentScoreList=[]
+for x in range(int(raw_input())):
+    
+    name = raw_input()
+    studentNameList.append(name)
+    score = float(raw_input())
+    studentScoreList.append(score)
+
+runnerUpListScore =[] 
+runnerUpListName = []
+maxScore =min(studentScoreList)
+numberToPop = studentScoreList.index(maxScore)
+
+i = 0
+
+while i < len(studentScoreList):
+
+    if studentScoreList[i] > maxScore: 
+        runnerUpListScore.append(studentScoreList[i])
+        runnerUpListName.append(studentNameList[i])  
+    i = i + 1
+
+
+runnerUpScore = min(runnerUpListScore)
+runnerUpIndex = runnerUpListScore.index(runnerUpScore)
+
+answer= []
+
+for i in range(len(runnerUpListScore)):
+     if runnerUpListScore[i] == runnerUpScore: 
+         answer.append(runnerUpListName[i])
+answer.sort()
+for i in range(len(answer)):
+    print answer[i]
+
+Given the participants' score sheet for your University Sports Day, 
+you are required to find the runner-up score. 
+You are given  scores. Store them in a list and find the score of the runner-up.
+
+n=input()
+a=map(int,input().split())
+a=list(set(a))
+a.remove(max(a))
+print (max(a))
+
+
+
+You are given the year, and you have to write a function to check if the year is leap or not.
+The year can be evenly divided by 4, is a leap year, unless:
+The year can be evenly divided by 100, it is NOT a leap year, unless:
+The year is also evenly divisible by 400. Then it is a leap year.
+
+
+def is_leap(year):
+    leap = False
+    
+    if year % 4 == 0 and not(year % 100 == 0):
+        leap = True
+    elif year % 4 == 0 and year % 100 ==0 and year % 400 == 0:
+        leap = True
+    else:
+        leap = False
+
+    
+    return leap
+
 #Palindrome
 def split(word):
     return list(word)
@@ -207,3 +333,20 @@ print(dict)
 #Daily Coding problem 27
 #Given a string of round, curly, and square open and closing brackets,
 #return whether the brackets are balanced (well-formed).
+
+def mergeFiles(fileSizes):
+    totalTime = 0
+    size = len(fileSizes) 
+    fileSizes.sort()
+    finalTotal = 0 
+    while size > 1:
+        num1 = fileSizes[0]
+        num2 = fileSizes[1]
+        totalTime = num1 + num2
+        fileSizes.pop(0)
+        fileSizes.pop(0)        
+        fileSizes.insert(0,totalTime)
+        fileSizes.sort()
+        size = size - 1 
+        finalTotal = finalTotal + totalTime
+    return(finalTotal)
